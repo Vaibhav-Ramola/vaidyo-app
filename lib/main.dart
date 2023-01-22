@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vaidyo_app/pages/get_started_page.dart';
 import 'package:vaidyo_app/pages/lang_select_page.dart';
 import 'package:vaidyo_app/pages/login_page.dart';
+import 'package:vaidyo_app/pages/register_page.dart';
+import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/pages/splash_screen.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const SelectPage(),
     );
   }
 }

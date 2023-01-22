@@ -68,6 +68,9 @@ flutter:
     - assets/images/splash_screen.jpg
     - assets/images/Vaidyo image 1.svg
     - assets/images/Vaidyo image 2.svg
+    - assets/images/placeholder.png
+    - assets/images/folder.png
+    - assets/images/folder.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

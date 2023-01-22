@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vaidyo_app/pages/get_started_page.dart';
 import 'package:vaidyo_app/pages/lang_select_page.dart';
 import 'package:vaidyo_app/pages/login_page.dart';
+import 'package:vaidyo_app/pages/patients_details_page.dart';
 import 'package:vaidyo_app/pages/register_page.dart';
 import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/pages/splash_screen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SelectPage(),
+      home: const PatientDetailsPage(),
     );
   }
 }

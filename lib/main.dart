@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vaidyo_app/pages/edit_vitals_page.dart';
 import 'package:vaidyo_app/pages/get_started_page.dart';
 import 'package:vaidyo_app/pages/lang_select_page.dart';
 import 'package:vaidyo_app/pages/login_page.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PatientDetailsPage(),
+      home: const EditVitalsPage(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/district_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 import 'package:vaidyo_app/widgets/calender.dart';
 import 'package:vaidyo_app/widgets/custom_vaidyo_button.dart';
@@ -14,11 +15,20 @@ class EditVitalsPage extends StatefulWidget {
 
 class _EditVitalsPageState extends State<EditVitalsPage> {
   String _dropDownValue = DateTime.now().year.toString();
-  List<DropdownMenuItem<String>> _dropDownList = [];
+  final List<DropdownMenuItem<String>> _dropDownList = [];
   final _formKey = GlobalKey<FormState>();
+
+  void doneButtonFunction() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: ((context) => const DistrictPage()),
+      ),
+    );
+  }
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     int currYr = DateTime.now().year;
     for (int i = currYr - 50; i < currYr + 50; i++) {
@@ -208,8 +218,14 @@ class _EditVitalsPageState extends State<EditVitalsPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomVaidyoButton(buttonLabel: 'Reset'),
-                      CustomVaidyoButton(buttonLabel: 'Done'),
+                      const CustomVaidyoButton(
+                        buttonLabel: 'Reset',
+                        fun: null,
+                      ),
+                      CustomVaidyoButton(
+                        buttonLabel: 'Done',
+                        fun: doneButtonFunction,
+                      ),
                     ],
                   ),
                 ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/edit_vitals_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
-import 'package:vaidyo_app/widgets/basic_details_container.dart';
 import 'package:vaidyo_app/widgets/blood_grp_selector.dart';
 import 'package:vaidyo_app/widgets/custom_vaidyo_button.dart';
 import 'package:vaidyo_app/widgets/details_container.dart';
@@ -16,6 +16,15 @@ class EnterDetailsPage extends StatefulWidget {
 }
 
 class _EnterDetailsPageState extends State<EnterDetailsPage> {
+  void nextButtonFunction() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: ((context) => const EditVitalsPage()),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,13 +56,13 @@ class _EnterDetailsPageState extends State<EnterDetailsPage> {
           const SliverToBoxAdapter(
             child: SizedBox(height: 24),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: DetailsContainer(
               label: "Name",
               showDatePicker: false,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: DetailsContainer(
               label: "Date of Birth",
               showDatePicker: true,
@@ -92,11 +101,13 @@ class _EnterDetailsPageState extends State<EnterDetailsPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomVaidyoButton(
+                  const CustomVaidyoButton(
                     buttonLabel: 'Reset',
+                    fun: null,
                   ),
                   CustomVaidyoButton(
                     buttonLabel: 'Next',
+                    fun: nextButtonFunction,
                   ),
                 ],
               ),

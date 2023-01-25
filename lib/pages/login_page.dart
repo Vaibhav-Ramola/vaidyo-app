@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/lang_select_page.dart';
 // import 'package:vaidyo_app/theme_data.dart';
 
 class LoginPage extends StatefulWidget {
@@ -84,143 +85,165 @@ class _LoginPageState extends State<LoginPage> {
                     Form(
                       key: _formKey,
                       child: Expanded(
-                        child: ListView(
+                        child: CustomScrollView(
                           physics: const NeverScrollableScrollPhysics(),
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 35,
-                                vertical: 10,
-                              ),
-                              child: TextFormField(
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w300,
+                          slivers: [
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 35,
+                                  vertical: 10,
                                 ),
-                                decoration: InputDecoration(
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-                                    // borderSide:
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-                                    // borderSide:
-                                  ),
-                                  contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 30,
-                                    vertical: 10,
-                                  ),
-                                  focusColor: Colors.white,
-                                  labelText: 'Enter Medical ID',
-                                  labelStyle: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color(0xff828182),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 40,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 35,
-                                // vertical: 10,
-                              ),
-                              child: TextFormField(
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                                decoration: InputDecoration(
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-
-                                    // borderSide:
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-
-                                    // borderSide:
-                                  ),
-                                  contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 30,
-                                    vertical: 10,
-                                  ),
-                                  focusColor: Colors.white,
-                                  labelText: 'Enter password',
-                                  labelStyle: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color(0xff828182),
-                                  ),
-                                ),
-                                obscureText: true,
-                              ),
-                            ),
-                            Container(
-                              width: double.infinity,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 35),
-                              alignment: Alignment.centerRight,
-                              child: TextButton(
-                                onPressed: (() {}),
-                                child: Text(
-                                  'Forgot password?',
+                                child: TextFormField(
                                   style: GoogleFonts.poppins(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color(0xff3D3D47),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
                                   ),
-                                  textAlign: TextAlign.right,
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                      borderSide:
+                                          const BorderSide(color: Colors.white),
+                                      // borderSide:
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                      borderSide:
+                                          const BorderSide(color: Colors.white),
+                                      // borderSide:
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 30,
+                                      vertical: 10,
+                                    ),
+                                    focusColor: Colors.white,
+                                    labelText: 'Enter Medical ID',
+                                    labelStyle: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: const Color(0xff828182),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SliverToBoxAdapter(
+                              child: SizedBox(
+                                height: 40,
+                              ),
+                            ),
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 35,
+                                  // vertical: 10,
+                                ),
+                                child: TextFormField(
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                      borderSide:
+                                          const BorderSide(color: Colors.white),
+
+                                      // borderSide:
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                      borderSide:
+                                          const BorderSide(color: Colors.white),
+
+                                      // borderSide:
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 30,
+                                      vertical: 10,
+                                    ),
+                                    focusColor: Colors.white,
+                                    labelText: 'Enter password',
+                                    labelStyle: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: const Color(0xff828182),
+                                    ),
+                                  ),
+                                  obscureText: true,
+                                ),
+                              ),
+                            ),
+                            SliverToBoxAdapter(
+                              child: Container(
+                                width: double.infinity,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 35),
+                                alignment: Alignment.centerRight,
+                                child: TextButton(
+                                  onPressed: (() {}),
+                                  child: Text(
+                                    'Forgot password?',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      color: const Color(0xff3D3D47),
+                                    ),
+                                    textAlign: TextAlign.right,
+                                  ),
                                 ),
                               ),
                             ),
                             // const SizedBox(
                             //   height: 200,
                             // ),
-                            const Spacer(),
-                            Padding(
-                              padding: const EdgeInsets.all(110.0),
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xff3B9684),
-                                  ),
-                                  padding: MaterialStateProperty.all(
-                                    const EdgeInsets.symmetric(
-                                      vertical: 16,
-                                      horizontal: 40,
-                                    ),
-                                  ),
-                                  shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      // side: const BorderSide(color: Colors.red),
-                                    ),
-                                  ),
+
+                            SliverFillRemaining(
+                              child: Container(
+                                alignment: Alignment.bottomCenter,
+                                padding: const EdgeInsets.only(
+                                  bottom: 24,
                                 ),
-                                onPressed: (() {}),
-                                child: Text(
-                                  "Log In",
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                      const Color(0xff3B9684),
+                                    ),
+                                    padding: MaterialStateProperty.all(
+                                      const EdgeInsets.symmetric(
+                                        vertical: 16,
+                                        horizontal: 40,
+                                      ),
+                                    ),
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        // side: const BorderSide(color: Colors.red),
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: (() {
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: ((context) =>
+                                            const LangSelectPage()),
+                                      ),
+                                    );
+                                  }),
+                                  child: Text(
+                                    "Log In",
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),

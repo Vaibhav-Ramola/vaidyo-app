@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/login_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 
 class GetStartePage extends StatefulWidget {
@@ -55,7 +56,14 @@ class _GetStartePageState extends State<GetStartePage> {
                 ),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginPage(),
+                ),
+              );
+            },
             child: Text(
               "Get Started",
               style: GoogleFonts.poppins(

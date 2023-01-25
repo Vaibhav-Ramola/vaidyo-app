@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/district_page.dart';
+import 'package:vaidyo_app/pages/enter_details_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 
 class SelectPage extends StatefulWidget {
@@ -34,7 +36,22 @@ class _SelectPageState extends State<SelectPage> {
             const Color(0xff3B9684),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          var nextScreen;
+          if (label == 'Add New Patient') {
+            nextScreen = const EnterDetailsPage();
+          } else if (label == 'Edit Existing Patient') {
+            nextScreen = const EnterDetailsPage();
+          } else {
+            nextScreen = const DistrictPage();
+          }
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: ((context) => nextScreen),
+            ),
+          );
+        },
         child: Text(
           label,
           style: GoogleFonts.poppins(

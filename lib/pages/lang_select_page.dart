@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 import 'package:vaidyo_app/widgets/set_lang_button.dart';
 
@@ -11,7 +12,15 @@ class LangSelectPage extends StatefulWidget {
 }
 
 class _LangSelectPageState extends State<LangSelectPage> {
-  void setLangToEnglish() {}
+  void setLangToEnglish() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: ((context) => const SelectPage()),
+      ),
+    );
+  }
+
   void setLangToHindi() {}
   void setLangToMarathi() {}
   void setLangToTelugu() {}
@@ -59,9 +68,12 @@ class _LangSelectPageState extends State<LangSelectPage> {
                     crossAxisSpacing: 100,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      SetLangButton(
-                        text: "English",
-                        fun: setLangToEnglish,
+                      GestureDetector(
+                        onTap: setLangToEnglish,
+                        child: SetLangButton(
+                          text: "English",
+                          fun: setLangToEnglish,
+                        ),
                       ),
                       SetLangButton(
                         text: "Hindi",

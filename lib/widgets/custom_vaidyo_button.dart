@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomVaidyoButton extends StatefulWidget {
-  String buttonLabel;
-  CustomVaidyoButton({
+  final String buttonLabel;
+  final fun;
+  const CustomVaidyoButton({
     required this.buttonLabel,
+    required this.fun,
     super.key,
   });
 
@@ -16,7 +18,7 @@ class _CustomVaidyoButtonState extends State<CustomVaidyoButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: widget.fun,
       style: ButtonStyle(
         padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(

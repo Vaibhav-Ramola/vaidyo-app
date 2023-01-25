@@ -16,6 +16,8 @@ class Calender extends StatefulWidget {
 class _CalenderState extends State<Calender> {
   late List<String> _months;
   late int _currMonth;
+  late int _currDate;
+  late int _currDay;
 
   @override
   void initState() {
@@ -36,10 +38,13 @@ class _CalenderState extends State<Calender> {
       'Dec'
     ];
     _currMonth = DateTime.now().month;
+    _currDate = DateTime.now().day;
+    _currDay = DateTime.now().weekday;
   }
 
   @override
   Widget build(BuildContext context) {
+    bool selected = false;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -81,13 +86,30 @@ class _CalenderState extends State<Calender> {
               _currMonth,
             ),
             itemBuilder: ((context, index) {
-              return DayContainer(
-                day: DateTime(
-                  int.parse(widget.year),
-                  _currMonth,
-                  index + 1,
-                ).weekday.toString(),
-                date: (index + 1).toString(),
+              return GestureDetector(
+                onTap: () {
+                  // print("132");
+                  setState(() {
+                    _currDay = DateTime(
+                      int.parse(widget.year),
+                      _currMonth,
+                      index + 1,
+                    ).weekday;
+                    _currDate = index + 1;
+                    // print(_currDate);
+                    // print(_currDay);
+                  });
+                },
+                child: DayContainer(
+                  day: DateTime(
+                    int.parse(widget.year),
+                    _currMonth,
+                    index + 1,
+                  ).weekday.toString(),
+                  date: (index + 1).toString(),
+                  currentDate: _currDate.toString(),
+                  currentDay: _currDay.toString(),
+                ),
               );
             }),
           ),

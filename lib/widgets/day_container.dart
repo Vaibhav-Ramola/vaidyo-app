@@ -3,11 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/theme_data.dart';
 
 class DayContainer extends StatefulWidget {
-  String day;
-  String date;
-  DayContainer({
+  final String day;
+  final String date;
+  final String currentDay;
+  final String currentDate;
+  const DayContainer({
     required this.day,
     required this.date,
+    required this.currentDate,
+    required this.currentDay,
     super.key,
   });
 
@@ -56,7 +60,10 @@ class _DayContainerState extends State<DayContainer> {
             style: GoogleFonts.poppins(
               fontSize: 13,
               fontWeight: FontWeight.w500,
-              color: const Color(0xff585658),
+              color: (widget.currentDate == widget.date &&
+                      widget.currentDay == widget.day)
+                  ? const Color(0xff3C9785)
+                  : const Color(0xff585658),
             ),
           ),
           const Spacer(),
@@ -67,7 +74,10 @@ class _DayContainerState extends State<DayContainer> {
               style: GoogleFonts.poppins(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
-                color: const Color(0xff585658),
+                color: (widget.currentDate == widget.date &&
+                        widget.currentDay == widget.day)
+                    ? const Color(0xff3C9785)
+                    : const Color(0xff585658),
               ),
             ),
           ),

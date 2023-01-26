@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/widgets/day_container.dart';
 
+// ignore: must_be_immutable
 class Calender extends StatefulWidget {
   String year = DateTime.now().year.toString();
   Calender({
     required this.year,
     super.key,
   });
-
   @override
   State<Calender> createState() => _CalenderState();
 }
@@ -21,7 +21,6 @@ class _CalenderState extends State<Calender> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _months = [
       'Jan',
@@ -44,7 +43,6 @@ class _CalenderState extends State<Calender> {
 
   @override
   Widget build(BuildContext context) {
-    bool selected = false;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -88,7 +86,6 @@ class _CalenderState extends State<Calender> {
             itemBuilder: ((context, index) {
               return GestureDetector(
                 onTap: () {
-                  // print("132");
                   setState(() {
                     _currDay = DateTime(
                       int.parse(widget.year),
@@ -96,8 +93,6 @@ class _CalenderState extends State<Calender> {
                       index + 1,
                     ).weekday;
                     _currDate = index + 1;
-                    // print(_currDate);
-                    // print(_currDay);
                   });
                 },
                 child: DayContainer(

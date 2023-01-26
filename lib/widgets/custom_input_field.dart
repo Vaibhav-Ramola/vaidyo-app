@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomInputFiled extends StatefulWidget {
-  String labelText;
-  bool obscr;
-  CustomInputFiled({
+  final String labelText;
+  final bool obscr;
+  const CustomInputFiled({
     this.obscr = false,
     required this.labelText,
     super.key,

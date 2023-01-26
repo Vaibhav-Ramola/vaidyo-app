@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/theme_data.dart';
 
 class VitalsContainer extends StatefulWidget {
-  String text;
-  VitalsContainer({
+  final String text;
+  const VitalsContainer({
     required this.text,
     super.key,
   });

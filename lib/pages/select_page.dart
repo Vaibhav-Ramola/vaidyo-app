@@ -37,7 +37,7 @@ class _SelectPageState extends State<SelectPage> {
           ),
         ),
         onPressed: () {
-          var nextScreen;
+          StatefulWidget nextScreen;
           if (label == 'Add New Patient') {
             nextScreen = const EnterDetailsPage();
           } else if (label == 'Edit Existing Patient') {

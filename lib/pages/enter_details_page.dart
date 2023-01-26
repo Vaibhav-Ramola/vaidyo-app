@@ -85,7 +85,7 @@ class _EnterDetailsPageState extends State<EnterDetailsPage> {
           SliverToBoxAdapter(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: const [
                 VitalsContainer(text: 'Height'),
                 VitalsContainer(text: 'Weight'),
               ],

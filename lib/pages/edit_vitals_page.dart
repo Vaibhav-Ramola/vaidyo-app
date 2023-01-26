@@ -118,7 +118,7 @@ class _EditVitalsPageState extends State<EditVitalsPage> {
               SliverToBoxAdapter(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+                  children: const [
                     VitalsContainer(
                       text: "Temperature",
                     ),
@@ -136,7 +136,7 @@ class _EditVitalsPageState extends State<EditVitalsPage> {
               SliverToBoxAdapter(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+                  children: const [
                     VitalsContainer(
                       text: "Respiration",
                     ),

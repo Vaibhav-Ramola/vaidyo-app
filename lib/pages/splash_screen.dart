@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vaidyo_app/theme_data.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

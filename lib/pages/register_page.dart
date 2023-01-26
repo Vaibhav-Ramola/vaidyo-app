@@ -61,34 +61,34 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       const SizedBox(
                         height: 40,
                       ),
-                      Flexible(
+                      const Flexible(
                         fit: FlexFit.tight,
                         // padding: const EdgeInsets.symmetric(
                         //   horizontal: 20,
                         // ),
                         child: Padding(
-                          padding: const EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(30.0),
                           child: CustomInputFiled(labelText: "Enter Full Name"),
                         ),
                       ),
-                      Flexible(
+                      const Flexible(
                         fit: FlexFit.tight,
                         child: Padding(
-                          padding: const EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(30.0),
                           child: CustomInputFiled(labelText: "Enter Email"),
                         ),
                       ),
-                      Flexible(
+                      const Flexible(
                         fit: FlexFit.tight,
                         child: Padding(
-                          padding: const EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(30.0),
                           child: CustomInputFiled(labelText: "Enter Password"),
                         ),
                       ),
-                      Flexible(
+                      const Flexible(
                         fit: FlexFit.tight,
                         child: Padding(
-                          padding: const EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(30.0),
                           child: CustomInputFiled(labelText: "Enter Phone no."),
                         ),
                       ),

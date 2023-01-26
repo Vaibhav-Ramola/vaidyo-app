@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 import 'package:vaidyo_app/widgets/appointment_list.dart';
 import 'package:vaidyo_app/widgets/basic_details_container.dart';
@@ -25,7 +26,9 @@ class _PatientDetailsPageState extends State<PatientDetailsPage> {
             color: Colors.black,
             size: 32,
           ),
-          onPressed: (() {}),
+          onPressed: (() {
+            Navigator.pop(context);
+          }),
         ),
         title: Text(
           "Patient Details",
@@ -37,7 +40,14 @@ class _PatientDetailsPageState extends State<PatientDetailsPage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => const SelectPage()),
+                ),
+              );
+            },
             icon: const Icon(
               Icons.home_sharp,
               color: Colors.black,
@@ -91,6 +101,15 @@ class _PatientDetailsPageState extends State<PatientDetailsPage> {
               ),
             )
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (() {}),
+        backgroundColor: const Color(0xff3B9684),
+        child: const Icon(
+          Icons.add,
+          color: backgroundColor,
+          size: 32,
         ),
       ),
     );

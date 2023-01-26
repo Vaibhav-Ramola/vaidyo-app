@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/pages/patients_details_page.dart';
+import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 import 'dart:math' as math;
 
@@ -39,7 +41,14 @@ class _DistrictPageState extends State<DistrictPage> {
                 Container(
                   padding: const EdgeInsets.all(16),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => const SelectPage()),
+                        ),
+                      );
+                    },
                     icon: const Icon(
                       Icons.home_sharp,
                       size: 40,
@@ -66,51 +75,69 @@ class _DistrictPageState extends State<DistrictPage> {
               ),
               child: ListView.builder(
                 itemCount: 5,
-                itemBuilder: ((context, index) => Container(
-                      padding: const EdgeInsets.only(bottom: 12),
-                      child: Card(
-                        elevation: 6,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Container(
-                          padding: const EdgeInsets.only(
-                            top: 16,
-                            bottom: 16,
-                            // left: 16,
+                itemBuilder: ((context, index) => GestureDetector(
+                      onTap: (() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const PatientDetailsPage()),
                           ),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              maxRadius: 40,
-                              minRadius: 20,
-                              backgroundColor: Color(
-                                      (math.Random().nextDouble() * 0xFFFFFF)
-                                          .toInt())
-                                  .withOpacity(1.0),
+                        );
+                      }),
+                      child: Container(
+                        padding: const EdgeInsets.only(bottom: 12),
+                        child: Card(
+                          elevation: 6,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Container(
+                            padding: const EdgeInsets.only(
+                              top: 16,
+                              bottom: 16,
+                              // left: 16,
                             ),
-                            title: Text(
-                              "Name",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color(0xff1C1B1F)),
-                            ),
-                            subtitle: Text(
-                              "Gender, age",
-                              style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: const Color(
-                                  0xff1C1B1F,
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                maxRadius: 40,
+                                minRadius: 20,
+                                backgroundColor: Color(
+                                        (math.Random().nextDouble() * 0xFFFFFF)
+                                            .toInt())
+                                    .withOpacity(1.0),
+                              ),
+                              title: Text(
+                                "Name",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: const Color(0xff1C1B1F)),
+                              ),
+                              subtitle: Text(
+                                "Gender, age",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: const Color(
+                                    0xff1C1B1F,
+                                  ),
                                 ),
                               ),
-                            ),
-                            trailing: IconButton(
-                              onPressed: (() {}),
-                              icon: const Icon(
-                                Icons.arrow_forward_ios_sharp,
-                                size: 24,
-                                color: Color(0xff263238),
+                              trailing: IconButton(
+                                onPressed: (() {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: ((context) =>
+                                          const PatientDetailsPage()),
+                                    ),
+                                  );
+                                }),
+                                icon: const Icon(
+                                  Icons.arrow_forward_ios_sharp,
+                                  size: 24,
+                                  color: Color(0xff263238),
+                                ),
                               ),
                             ),
                           ),

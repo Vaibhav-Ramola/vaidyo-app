@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/pages/district_page.dart';
+import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 import 'package:vaidyo_app/widgets/calender.dart';
 import 'package:vaidyo_app/widgets/custom_vaidyo_button.dart';
@@ -57,7 +58,9 @@ class _EditVitalsPageState extends State<EditVitalsPage> {
             color: Colors.black,
             size: 32,
           ),
-          onPressed: (() {}),
+          onPressed: (() {
+            Navigator.pop(context);
+          }),
         ),
         title: Text(
           "Enter Patient Vitals",
@@ -69,7 +72,14 @@ class _EditVitalsPageState extends State<EditVitalsPage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => const SelectPage()),
+                ),
+              );
+            },
             icon: const Icon(
               Icons.home_sharp,
               size: 32,

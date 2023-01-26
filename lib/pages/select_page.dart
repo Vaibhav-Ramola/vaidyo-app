@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/pages/district_page.dart';
 import 'package:vaidyo_app/pages/enter_details_page.dart';
+import 'package:vaidyo_app/pages/patients_details_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 
 class SelectPage extends StatefulWidget {
@@ -41,11 +42,11 @@ class _SelectPageState extends State<SelectPage> {
           if (label == 'Add New Patient') {
             nextScreen = const EnterDetailsPage();
           } else if (label == 'Edit Existing Patient') {
-            nextScreen = const EnterDetailsPage();
+            nextScreen = const PatientDetailsPage();
           } else {
             nextScreen = const DistrictPage();
           }
-          Navigator.pushReplacement(
+          Navigator.push(
             context,
             MaterialPageRoute(
               builder: ((context) => nextScreen),

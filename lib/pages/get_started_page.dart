@@ -19,7 +19,7 @@ class _GetStartePageState extends State<GetStartePage> {
       body: Column(
         children: [
           const Spacer(),
-          Image.asset('assets/images/splash_screen.jpg'),
+          SvgPicture.asset('assets/images/splash_screen.svg', color: const Color(0xff3B9684),),
           const SizedBox(
             height: 20,
           ),

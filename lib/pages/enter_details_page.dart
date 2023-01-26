@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/pages/edit_vitals_page.dart';
+import 'package:vaidyo_app/pages/select_page.dart';
 import 'package:vaidyo_app/theme_data.dart';
 import 'package:vaidyo_app/widgets/blood_grp_selector.dart';
 import 'package:vaidyo_app/widgets/custom_vaidyo_button.dart';
@@ -42,7 +43,14 @@ class _EnterDetailsPageState extends State<EnterDetailsPage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => const SelectPage()),
+                ),
+              );
+            },
             icon: const Icon(
               Icons.home_sharp,
               size: 32,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaidyo_app/pages/lang_select_page.dart';
+import 'package:vaidyo_app/pages/register_page.dart';
 // import 'package:vaidyo_app/theme_data.dart';
 
 class LoginPage extends StatefulWidget {
@@ -208,43 +209,82 @@ class _LoginPageState extends State<LoginPage> {
                                 padding: const EdgeInsets.only(
                                   bottom: 24,
                                 ),
-                                child: ElevatedButton(
-                                  style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(
-                                      const Color(0xff3B9684),
-                                    ),
-                                    padding: MaterialStateProperty.all(
-                                      const EdgeInsets.symmetric(
-                                        vertical: 16,
-                                        horizontal: 40,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    ElevatedButton(
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                          const Color(0xff3B9684),
+                                        ),
+                                        padding: MaterialStateProperty.all(
+                                          const EdgeInsets.symmetric(
+                                            vertical: 16,
+                                            horizontal: 40,
+                                          ),
+                                        ),
+                                        shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(50.0),
+                                            // side: const BorderSide(color: Colors.red),
+                                          ),
+                                        ),
+                                      ),
+                                      onPressed: (() {
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: ((context) =>
+                                                const LangSelectPage()),
+                                          ),
+                                        );
+                                      }),
+                                      child: Text(
+                                        "Log In",
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(50.0),
-                                        // side: const BorderSide(color: Colors.red),
-                                      ),
+                                    Row(
+                                      children: [
+                                        const Spacer(),
+                                        Text(
+                                          "New User?",
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color: const Color(0xff3D3D47),
+                                          ),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    const RegistrationPage()),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            'Register',
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: const Color(0xff3B9684),
+                                            ),
+                                          ),
+                                        ),
+                                        const Spacer(),
+                                      ],
                                     ),
-                                  ),
-                                  onPressed: (() {
-                                    Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: ((context) =>
-                                            const LangSelectPage()),
-                                      ),
-                                    );
-                                  }),
-                                  child: Text(
-                                    "Log In",
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                                  ],
                                 ),
                               ),
                             ),

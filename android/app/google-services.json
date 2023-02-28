@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "636049707863",
+    "project_id": "vaidyo-app",
+    "storage_bucket": "vaidyo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636049707863:android:7cdcba7053828cccb9e412",
+        "android_client_info": {
+          "package_name": "com.example.vaidyo_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636049707863-c00ll5hm49iishdcb8c4gp8rkagm5h2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEMZTOefOkMyTub8VNpVPIZfaIIXNL5CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636049707863-c00ll5hm49iishdcb8c4gp8rkagm5h2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

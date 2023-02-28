@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vaidyo_app/theme_data.dart';
 import 'package:vaidyo_app/widgets/custom_input_field.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -16,7 +17,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: backgroundColor,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            size: 32,
+            color: Colors.black,
+          ),
+          onPressed: (() {}),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -41,90 +54,88 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
                 child: Form(
                   key: _formKey,
-                  child: ListView(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    shrinkWrap: true,
-                    // physics: const NeverScrollableScrollPhysics(),
-                    children: [
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      Text(
-                        "Register",
-                        style: GoogleFonts.poppins(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xff3C9785),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      const Flexible(
-                        fit: FlexFit.tight,
-                        // padding: const EdgeInsets.symmetric(
-                        //   horizontal: 20,
-                        // ),
-                        child: Padding(
-                          padding: EdgeInsets.all(30.0),
-                          child: CustomInputFiled(labelText: "Enter Full Name"),
+                  child: CustomScrollView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    slivers: [
+                      const SliverToBoxAdapter(
+                        child: SizedBox(
+                          height: 30,
                         ),
                       ),
-                      const Flexible(
-                        fit: FlexFit.tight,
+                      SliverToBoxAdapter(
+                        child: Text(
+                          "Register",
+                          style: GoogleFonts.poppins(
+                            fontSize: 32,
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xff3C9785),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      const SliverToBoxAdapter(
+                        child: SizedBox(
+                          height: 30,
+                        ),
+                      ),
+                      const SliverToBoxAdapter(
                         child: Padding(
-                          padding: EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(16.0),
+                          child: CustomInputFiled(
+                            labelText: "Enter Full Name",
+                          ),
+                        ),
+                      ),
+                      const SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.all(16.0),
                           child: CustomInputFiled(labelText: "Enter Email"),
                         ),
                       ),
-                      const Flexible(
-                        fit: FlexFit.tight,
+                      const SliverToBoxAdapter(
                         child: Padding(
-                          padding: EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(16.0),
                           child: CustomInputFiled(labelText: "Enter Password"),
                         ),
                       ),
-                      const Flexible(
-                        fit: FlexFit.tight,
+                      const SliverToBoxAdapter(
                         child: Padding(
-                          padding: EdgeInsets.all(30.0),
+                          padding: EdgeInsets.all(16.0),
                           child: CustomInputFiled(labelText: "Enter Phone no."),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 100),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            padding: MaterialStateProperty.all(
-                              const EdgeInsets.symmetric(
+                      SliverFillRemaining(
+                        child: Container(
+                          alignment: Alignment.bottomCenter,
+                          padding: const EdgeInsets.only(bottom: 24),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              padding: MaterialStateProperty.all(
+                                  const EdgeInsets.symmetric(
                                 horizontal: 40,
                                 vertical: 16,
+                              )),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                              ),
+                              backgroundColor: MaterialStateProperty.all(
+                                const Color(0xff3B9684),
                               ),
                             ),
-                            shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
+                            child: Text(
+                              "Register",
+                              style: GoogleFonts.poppins(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
                               ),
-                            ),
-                            backgroundColor: MaterialStateProperty.all(
-                              const Color(0xff3B9684),
-                            ),
-                          ),
-                          child: Text(
-                            "Register",
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      )
                     ],
                   ),
                 ),
